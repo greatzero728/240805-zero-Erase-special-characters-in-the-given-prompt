@@ -42,10 +42,10 @@ This desktop application allows users to process text by removing specific chara
 
 ### Running the Application
 
-- After running `zero.py`, a window will open with a text area and two buttons: "Process Text" and "Copy Text".
+- After running `zero.py`, a window will open with a text area and two buttons: "Process Text" and "Cut Text".
 - Enter or paste the text you want to process in the text area.
 - Click "Process Text" to clean the text according to the rules.
-- Click "Copy Text" to copy the processed text to the clipboard.
+- Click "Cut Text" to cut the processed text to the clipboard.
 
 ## How the App Works
 
@@ -58,4 +58,4 @@ This desktop application allows users to process text by removing specific chara
 
 3. **Output:**
    - The processed text is displayed in the same text area, replacing the original input.
-   - The processed text can be copied to the clipboard by clicking the "Copy Text" button.
+   - The processed text can be copied to the clipboard by clicking the "Cut Text" button.
