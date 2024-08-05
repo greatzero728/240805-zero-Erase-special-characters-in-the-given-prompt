@@ -24,14 +24,15 @@ def process_text():
     text_area.insert(tk.INSERT, processed_text)
     update_status("Text processed successfully", "green")
 
-def copy_text():
-    processed_text = text_area.get("1.0", tk.END).strip()
-    if processed_text:
+def cut_text():
+    selected_text = text_area.get("1.0", tk.END).strip()
+    if selected_text:
         app.clipboard_clear()
-        app.clipboard_append(processed_text)
-        update_status("Text copied to clipboard", "green")
+        app.clipboard_append(selected_text)
+        text_area.delete("1.0", tk.END)
+        update_status("Text cut to clipboard", "green")
     else:
-        update_status("No text to copy", "red")
+        update_status("No text to cut", "red")
 
 def update_status(message, color):
     status_label.config(text=message, fg=color)
@@ -68,7 +69,7 @@ text_area.pack(pady=20)
 button_frame = tk.Frame(app, bg='#E8F8F5')
 button_frame.pack(pady=10)
 
-# Create Process and Copy buttons with larger size and rounded corners
+# Create Process and Cut buttons with larger size and rounded corners
 button_style = {
     "font": ("Helvetica", 14),
     "bg": "#5DADE2",
@@ -78,7 +79,7 @@ button_style = {
     "relief": "flat",
     "bd": 5,
     "width": 15,
-    "height": 1  # Increase height
+    "height": 1
 }
 
 process_button = tk.Button(button_frame, text="Process Text", command=process_text, **button_style)
@@ -86,10 +87,10 @@ process_button.grid(row=0, column=0, padx=20)
 process_button.bind("<Enter>", lambda event: on_enter(event, process_button))
 process_button.bind("<Leave>", lambda event: on_leave(event, process_button))
 
-copy_button = tk.Button(button_frame, text="Copy Text", command=copy_text, **button_style)
-copy_button.grid(row=0, column=1, padx=20)
-copy_button.bind("<Enter>", lambda event: on_enter(event, copy_button))
-copy_button.bind("<Leave>", lambda event: on_leave(event, copy_button))
+cut_button = tk.Button(button_frame, text="Cut Text", command=cut_text, **button_style)
+cut_button.grid(row=0, column=1, padx=20)
+cut_button.bind("<Enter>", lambda event: on_enter(event, cut_button))
+cut_button.bind("<Leave>", lambda event: on_leave(event, cut_button))
 
 # Create a status bar
 status_label = tk.Label(app, text='', bd=1, relief=tk.SUNKEN, anchor=tk.W, bg='#E8F8F5', pady=10)
