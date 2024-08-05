@@ -8,8 +8,16 @@ def process_text():
         messagebox.showwarning("Warning", "Please enter some text to process")
         return
     
-    # Remove *, (, ), [, ] and content inside of []
-    processed_text = re.sub(r'\*|\(|\)|\[.*?\]', '', input_text)
+    # Define a function to handle the replacement logic
+    def replace_func(match):
+        content = match.group(1)
+        return content if content == 'client' else ''
+    
+    # Replace square bracket content except for 'client'
+    processed_text = re.sub(r'\[(.*?)\]', replace_func, input_text)
+    
+    # Remove *, (, )
+    processed_text = re.sub(r'\*|\(|\)', '', processed_text)
     
     # Clear the text area and insert the processed text
     text_area.delete("1.0", tk.END)
