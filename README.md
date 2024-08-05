@@ -42,10 +42,10 @@ This desktop application allows users to process text by removing specific chara
 
 ### Running the Application
 
-- After running `zero.py`, a window will open with a text area and two buttons: "Process Text" and "Clear Text".
+- After running `zero.py`, a window will open with a text area and two buttons: "Process Text" and "Copy Text".
 - Enter or paste the text you want to process in the text area.
 - Click "Process Text" to clean the text according to the rules.
-- Click "Clear Text" to clear the text area and start over.
+- Click "Copy Text" to copy the processed text to the clipboard.
 
 ## How the App Works
 
@@ -58,19 +58,4 @@ This desktop application allows users to process text by removing specific chara
 
 3. **Output:**
    - The processed text is displayed in the same text area, replacing the original input.
-
-## Code Overview
-
-Here's a brief explanation of the main parts of the code:
-
-- **Imports:**
-  - `re`: For regular expressions to process the text.
-  - `tkinter`, `scrolledtext`, `messagebox`: For creating the GUI components.
-
-- **Functions:**
-  - `process_text()`: Handles text processing and updates the text area.
-  - `clear_text()`: Clears the text area.
-
-- **GUI Setup:**
-  - Creates the main window, text area, and buttons using Tkinter.
-  - Configures button commands to trigger the appropriate functions.
+   - The processed text can be copied to the clipboard by clicking the "Copy Text" button.
