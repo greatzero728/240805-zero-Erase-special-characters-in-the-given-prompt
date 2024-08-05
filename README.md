@@ -1,6 +1,6 @@
 # Text Processor Desktop App
 
-![Erase special characters in the given prompt](Erase special characters in the given prompt.gif)
+![Erase special characters in the given prompt](https://github.com/greatzero728/240805-zero-Erase-special-characters-in-the-given-prompt/blob/main/Erase%20special%20characters%20in%20the%20given%20prompt.gif)
 
 ## Introduction
 
